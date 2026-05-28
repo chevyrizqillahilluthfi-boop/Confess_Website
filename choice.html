@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Big Question ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Pacifico&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/choice.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <audio id="bg-music" loop>
+    <source src="music/Penjaga Hati - Nadhif Basalamah _ Instrumental.mp3" type="audio/mp3">
+  </audio>
+
+
+  <main class="choice-scene">
+
+    <div class="choice-container" id="choiceContainer">
+      <div class="deco-top">
+        <span>♡</span><span>♡</span><span>♡</span>
+      </div>
+
+      <!-- Pertanyaan besar -->
+      <h1 class="the-question" id="theQuestion">
+        Will you accept me as<br/>
+        <span class="highlight-text">your boyfriend?</span>
+      </h1>
+
+      <!-- Sub text -->
+      <p class="the-subtext" id="theSubtext">
+        Pilih dengan hati yang jujur ~
+      </p>
+
+      <div class="choice-buttons" id="choiceButtons">
+        <button class="choice-btn yes-btn" id="yesBtn" onclick="handleYes()">
+          <span class="btn-label">YES</span>
+          <span class="btn-sub">tentu saja ♡</span>
+        </button>
+        <button class="choice-btn no-btn" id="noBtn" onmouseenter="handleNoHover(event)" onclick="handleNoClick(event)">
+          <span class="btn-label">NO</span>
+          <span class="btn-sub">hmm...</span>
+        </button>
+      </div>
+
+      <p class="no-teaser" id="noTeaser"></p>
+
+    </div>
+
+  </main>
+
+  <div class="page-transition" id="pageTransition"></div>
+
+  <script src="js/choice.js"></script>
+</body>
+</html>

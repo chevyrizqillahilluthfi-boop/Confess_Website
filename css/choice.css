@@ -1,0 +1,250 @@
+/* ============================================
+   choice.css — Halaman YES / NO
+   ============================================ */
+
+:root {
+  --pink-light: #fff0f5;
+  --pink-soft: #ffd6e7;
+  --pink-mid: #ffb3d1;
+  --pink-deep: #e8789a;
+  --rose-gold: #c4767a;
+  --white: #ffffff;
+  --text-dark: #6b3040;
+  --text-mid: #a05570;
+  --text-light: #c48fa0;
+  --shadow-pink: rgba(232, 120, 154, 0.25);
+  --font-body: 'Cormorant Garamond', serif;
+  --font-ui: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: var(--pink-light);
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, #ffe0ee 0%, #fff0f5 60%, #fce8f0 100%);
+  z-index: -1;
+}
+
+#bg-canvas {
+  position: fixed; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 0; pointer-events: none;
+}
+
+/* ---- Main Scene ---- */
+.choice-scene {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
+}
+
+.choice-container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.choice-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Deco top ---- */
+.deco-top {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--pink-mid);
+}
+
+.deco-top span {
+  display: inline-block;
+  animation: topHeartFloat 2.5s ease-in-out infinite;
+}
+.deco-top span:nth-child(1) { animation-delay: 0s; }
+.deco-top span:nth-child(2) { animation-delay: 0.4s; font-size: 2.2rem; color: var(--pink-deep); }
+.deco-top span:nth-child(3) { animation-delay: 0.8s; }
+
+@keyframes topHeartFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ---- Question ---- */
+.the-question {
+  font-family: var(--font-body);
+  font-size: clamp(1.7rem, 5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.35;
+  margin-bottom: 0.8rem;
+}
+
+.highlight-text {
+  font-style: italic;
+  color: var(--pink-deep);
+  display: inline-block;
+  position: relative;
+}
+
+.highlight-text::after {
+  content: '';
+  position: absolute;
+  bottom: 2px; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--pink-mid), transparent);
+  animation: lineGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes lineGlow {
+  from { opacity: 0.4; }
+  to   { opacity: 1; }
+}
+
+.the-subtext {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--text-light);
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ---- Buttons ---- */
+.choice-buttons {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.choice-btn {
+  position: relative;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 1.2rem 2.5rem;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  min-width: 130px;
+}
+
+.btn-label {
+  font-family: var(--font-ui);
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+.btn-sub {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* YES button */
+.yes-btn {
+  background: linear-gradient(135deg, var(--pink-mid), var(--pink-deep));
+  color: var(--white);
+  box-shadow: 0 10px 35px var(--shadow-pink);
+  animation: yesBounce 2s ease-in-out infinite;
+}
+
+@keyframes yesBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-6px) scale(1.02); }
+}
+
+.yes-btn:hover {
+  box-shadow: 0 14px 45px rgba(232,120,154,0.5);
+  animation: none;
+  transform: scale(1.07);
+}
+
+.yes-btn:active { transform: scale(0.97); }
+
+/* NO button */
+.no-btn {
+  background: var(--white);
+  color: var(--text-mid);
+  border: 1.5px solid var(--pink-soft);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  /* position: fixed oleh JS saat menghindar */
+}
+
+.no-btn:hover {
+  border-color: var(--pink-mid);
+  box-shadow: 0 8px 24px rgba(232,120,154,0.15);
+}
+
+/* ---- Teks lucu saat klik NO ---- */
+.no-teaser {
+  margin-top: 1.2rem;
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--pink-deep);
+  font-size: 1rem;
+  min-height: 1.5em;
+  animation: teaserPop 0.3s ease;
+}
+
+@keyframes teaserPop {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ---- Glow pulse ring (saat hover YES) ---- */
+.yes-btn::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, var(--pink-mid), var(--pink-deep));
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.yes-btn:hover::before {
+  opacity: 0.2;
+  animation: glowPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50%       { transform: scale(1.06); opacity: 0.35; }
+}
+
+/* ---- Page transition ---- */
+.page-transition {
+  position: fixed; inset: 0;
+  background: var(--pink-light);
+  z-index: 9998; opacity: 0; pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+.page-transition.active { opacity: 1; pointer-events: all; }
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .the-question { font-size: 1.5rem; }
+  .choice-buttons { gap: 0.8rem; }
+  .choice-btn { padding: 1rem 2rem; min-width: 110px; }
+}

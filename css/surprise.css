@@ -1,0 +1,179 @@
+/* ============================================
+   surprise.css — Halaman Kejutan / Celebration
+   ============================================ */
+
+:root {
+  --pink-light: #fff0f5;
+  --pink-soft: #ffd6e7;
+  --pink-mid: #ffb3d1;
+  --pink-deep: #e8789a;
+  --rose-gold: #c4767a;
+  --white: #ffffff;
+  --text-dark: #6b3040;
+  --text-mid: #a05570;
+  --text-light: #c48fa0;
+  --shadow-pink: rgba(232, 120, 154, 0.3);
+  --font-display: 'Pacifico', cursive;
+  --font-body: 'Cormorant Garamond', serif;
+  --font-ui: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: var(--pink-light);
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, #ffcce0 0%, #ffe8f2 40%, #fff0f5 100%);
+  z-index: -1;
+}
+
+/* ---- Canvas (heart fireworks) ---- */
+#celebration-canvas {
+  position: fixed; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---- Main Scene ---- */
+.surprise-scene {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
+}
+
+.surprise-container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  opacity: 0;
+  transition: opacity 1s ease 0.3s;
+}
+
+.surprise-container.visible {
+  opacity: 1;
+}
+
+/* ---- Glow circle ---- */
+.glow-circle {
+  position: absolute;
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,179,209,0.4) 0%, transparent 70%);
+  animation: glowExpand 3s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes glowExpand {
+  from { transform: scale(0.8); opacity: 0.5; }
+  to   { transform: scale(1.2); opacity: 1; }
+}
+
+/* ---- Text block ---- */
+.surprise-text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.surprise-pre {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: var(--text-light);
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.5s forwards;
+}
+
+.surprise-main {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 8vw, 4rem);
+  color: var(--pink-deep);
+  text-shadow: 0 4px 20px rgba(232,120,154,0.4);
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.8s forwards;
+  line-height: 1.2;
+}
+
+.surprise-heart-big {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  display: inline-block;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 1.1s forwards, heartMainBeat 1.5s ease-in-out 1.7s infinite;
+}
+
+@keyframes heartMainBeat {
+  0%, 100% { transform: scale(1); }
+  30%       { transform: scale(1.25); }
+  60%       { transform: scale(0.95); }
+}
+
+.surprise-sub {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: var(--text-mid);
+  line-height: 1.8;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 1.4s forwards;
+  max-width: 320px;
+}
+
+.surprise-sub em {
+  color: var(--pink-deep);
+  font-style: normal;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Date memory easter egg (2·6·26) ---- */
+.date-memory {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--pink-mid);
+  margin-top: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 2s forwards;
+}
+
+.date-memory .dot {
+  color: var(--pink-deep);
+  font-size: 1rem;
+}
+
+/* ---- Footer ---- */
+.surprise-footer {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 2.3s forwards;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .glow-circle { width: 260px; height: 260px; }
+  .surprise-main { font-size: 2rem; }
+  .surprise-sub { font-size: 0.9rem; }
+}

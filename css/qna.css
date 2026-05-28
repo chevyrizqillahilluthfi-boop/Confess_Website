@@ -1,0 +1,292 @@
+/* ============================================
+   qna.css — Halaman QnA / Komitmen
+   ============================================ */
+
+:root {
+  --pink-light: #fff0f5;
+  --pink-soft: #ffd6e7;
+  --pink-mid: #ffb3d1;
+  --pink-deep: #e8789a;
+  --rose-gold: #c4767a;
+  --white: #ffffff;
+  --text-dark: #6b3040;
+  --text-mid: #a05570;
+  --text-light: #c48fa0;
+  --shadow-pink: rgba(232, 120, 154, 0.2);
+  --font-display: 'Pacifico', cursive;
+  --font-body: 'Cormorant Garamond', serif;
+  --font-ui: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  background: var(--pink-light);
+  font-family: var(--font-ui);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background: radial-gradient(ellipse at 50% 20%, #ffe4f0 0%, #fff0f5 60%, #fce8f0 100%);
+  z-index: -1;
+}
+
+#bg-canvas {
+  position: fixed; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 0; pointer-events: none;
+}
+
+/* ---- Scene ---- */
+.qna-scene {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.qna-container {
+  max-width: 540px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.qna-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Header ---- */
+.qna-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.qna-heart-icon {
+  font-size: 2.5rem;
+  color: var(--pink-deep);
+  animation: heartBeat 1.5s ease-in-out infinite;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  30%       { transform: scale(1.2); }
+  60%       { transform: scale(0.95); }
+}
+
+.qna-title {
+  font-family: var(--font-body);
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+}
+
+.qna-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+}
+
+/* ---- Question cards ---- */
+.question-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 20px var(--shadow-pink);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.question-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.question-card:hover {
+  box-shadow: 0 8px 32px rgba(232, 120, 154, 0.3);
+}
+
+.q-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 3vw, 1.15rem);
+  font-style: italic;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  cursor: default;
+  line-height: 1.5;
+}
+
+.q-number {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-style: normal;
+  color: var(--pink-deep);
+  background: var(--pink-soft);
+  padding: 0.15rem 0.4rem;
+  border-radius: 20px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.q-input {
+  width: 100%;
+  background: var(--pink-light);
+  border: 1.5px solid var(--pink-soft);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  resize: vertical;
+  min-height: 80px;
+  outline: none;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.q-input::placeholder { color: var(--text-light); }
+
+.q-input:focus {
+  border-color: var(--pink-deep);
+  background: var(--white);
+}
+
+/* Glow effect saat focus */
+.input-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--pink-mid), var(--pink-deep));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.q-input:focus ~ .input-glow {
+  opacity: 0.15;
+}
+
+/* ---- Submit area ---- */
+.submit-area {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.send-btn {
+  padding: 1rem 3rem;
+  background: linear-gradient(135deg, var(--pink-mid), var(--pink-deep));
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 8px 28px var(--shadow-pink);
+  transition: box-shadow 0.3s ease, scale 0.2s ease;
+}
+
+.send-btn:hover {
+  scale: 1.05;
+  box-shadow: 0 12px 40px rgba(232,120,154,0.45);
+}
+
+.send-btn:active { scale: 0.97; }
+
+.send-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  scale: 1;
+}
+
+.send-icon {
+  font-size: 1.2rem;
+  animation: iconBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes iconBeat {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
+}
+
+.send-note {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-family: var(--font-body);
+  font-style: italic;
+}
+
+/* ---- Status message ---- */
+.send-status {
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 0.95rem;
+  animation: statusPop 0.4s ease;
+}
+
+.send-status.success {
+  background: #fff0f5;
+  color: var(--pink-deep);
+  border: 1px solid var(--pink-soft);
+}
+
+.send-status.error {
+  background: #fff5f0;
+  color: #e87862;
+  border: 1px solid #ffd6c8;
+}
+
+@keyframes statusPop {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ---- Page transition ---- */
+.page-transition {
+  position: fixed; inset: 0;
+  background: var(--pink-light);
+  z-index: 9998; opacity: 0; pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+.page-transition.active { opacity: 1; pointer-events: all; }
+
+/* ---- Bottom padding ---- */
+.qna-container { padding-bottom: 3rem; }
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .qna-scene { padding: 2rem 1rem; }
+  .question-card { padding: 1.2rem; }
+  .q-label { font-size: 1rem; }
+}

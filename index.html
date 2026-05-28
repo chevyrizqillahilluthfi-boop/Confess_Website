@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />s
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Pacifico&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+  <div id="loading-overlay">
+    <div class="loader-heart">♡</div>
+  </div>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <main class="intro-container" id="main-content">
+    <div class="intro-inner">
+
+      <div class="deco-hearts">
+        <span class="deco-h deco-h1">♡</span>
+        <span class="deco-h deco-h2">♡</span>
+      </div>
+
+      <div class="text-block">
+        <p class="line line-1" id="line1"></p>
+        <p class="line line-2" id="line2"></p>
+        <p class="line line-3" id="line3"></p>
+      </div>
+
+      <button class="open-btn" id="openBtn" onclick="goToLetter()">
+        <span class="btn-text">Open The Letter</span>
+        <span class="btn-icon">✉︎</span>
+      </button>
+
+      <div class="date-stamp">2 · 6 · 26</div>
+
+    </div>
+  </main>
+
+  <div class="page-transition" id="pageTransition"></div>
+
+  <script src="js/index.js"></script>
+</body>
+</html>

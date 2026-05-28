@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Letter For You ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Pacifico&family=DM+Sans:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/letter.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <audio id="bg-music" loop>
+    <source src="music/Penjaga Hati - Nadhif Basalamah _ Instrumental.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="music-indicator" id="musicIndicator" style="display:none;">
+    <span class="note">♪</span>
+    <span class="note">♫</span>
+    <span class="note">♪</span>
+  </div>
+
+  <main class="letter-scene" id="letterScene">
+
+    <div class="envelope-wrapper" id="envelopeWrapper">
+
+      <div class="envelope" id="envelope">
+
+        <div class="env-back"></div>
+
+        <div class="env-flap" id="envFlap">
+          <div class="flap-inner"></div>
+        </div>
+
+        <div class="env-front">
+          <div class="env-seal" id="envSeal">
+            <span>♡</span>
+          </div>
+          <div class="click-hint" id="clickHint">
+            <span>tap to open</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="flower-decor">
+        <span class="fl fl1">✿</span>
+        <span class="fl fl2">✿</span>
+        <span class="fl fl3">✿</span>
+        <span class="fl fl4">✿</span>
+        <span class="fl fl5">✿</span>
+        <span class="fl fl6">✿</span>
+      </div>
+
+    </div>
+
+    <div class="letter-paper-container" id="letterContainer" style="display:none;">
+      <div class="letter-paper">
+
+        <div class="letter-header">
+          <span class="letter-stamp">♡</span>
+        </div>
+
+        <div class="letter-content" id="letterContent">
+        </div>
+
+        <div class="letter-nav">
+          <span class="page-indicator" id="pageIndicator">1 / 5</span>
+          <button class="next-btn" id="nextBtn">next page →</button>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <div class="page-transition" id="pageTransition"></div>
+
+  <script src="js/letter.js"></script>
+</body>
+</html>

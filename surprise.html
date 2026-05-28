@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Now You're Mine ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Pacifico&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/surprise.css" />
+</head>
+<body>
+
+  <!-- Canvas untuk heart confetti & fireworks -->
+  <canvas id="celebration-canvas"></canvas>
+
+  <audio id="bg-music" loop>
+    <source src="music/Penjaga Hati - Nadhif Basalamah _ Instrumental.mp3" type="audio/mp3">
+  </audio>
+
+
+  <!-- Audio celebration -->
+  <audio id="celebration-music" loop autoplay>
+    <!-- Ganti src dengan file musik celebration di assets/music/ -->
+    <!-- <source src="assets/music/celebration.mp3" type="audio/mpeg" /> -->
+  </audio>
+
+  <!-- Main content -->
+  <main class="surprise-scene">
+
+    <div class="surprise-container" id="surpriseContainer">
+
+      <!-- Big glow circle di belakang teks -->
+      <div class="glow-circle"></div>
+
+      <!-- Teks utama -->
+      <div class="surprise-text-block">
+        <p class="surprise-pre">omg... aku senang banget 🥺</p>
+        <h1 class="surprise-main">Now You're Mine</h1>
+        <span class="surprise-heart-big">❤️</span>
+        <p class="surprise-sub">
+          Terima kasih sudah mau buka surat itu,<br/>
+          menjawab pertanyaanku,<br/>
+          dan bilang <em>iya</em>. ♡
+        </p>
+      </div>
+
+      <!-- Date easter egg: 2 · 6 · 26 -->
+      <div class="date-memory">
+        <span>2</span><span class="dot">·</span>
+        <span>6</span><span class="dot">·</span>
+        <span>26</span>
+      </div>
+
+      <!-- Subtle footer -->
+      <p class="surprise-footer">made with love, just for you ♡</p>
+
+    </div>
+
+  </main>
+
+  <script src="js/surprise.js"></script>
+</body>
+</html>
