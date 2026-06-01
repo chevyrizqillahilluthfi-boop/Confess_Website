@@ -1,7 +1,7 @@
 const lines = [
-  { el: document.getElementById('line1'), text: 'Hi, aku punya sesuatu untuk kamu...' },
-  { el: document.getElementById('line2'), text: 'Please stay for a moment...' },
-  { el: document.getElementById('line3'), text: 'Karena ada hal yang sudah lama ingin aku sampaikan.' },
+  { el: document.getElementById('line1'), text: 'sayang, aku punya sesuatu buat ayang...' },
+  { el: document.getElementById('line2'), text: 'wett sabar...' },
+  { el: document.getElementById('line3'), text: 'ini adalah momen yang ditunggu tunggu.' },
 ];
 
 let lineIndex = 0;

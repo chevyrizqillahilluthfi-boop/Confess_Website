@@ -1,30 +1,39 @@
 const letterPages = [
   // Halaman 1
-  `<p>Halo kamu,</p>
-   <p>Aku tidak tahu harus mulai dari mana. Tapi setiap kali aku mencoba tidur dan pikiranku terlalu ramai, namamu selalu yang pertama muncul.</p>
-   <p>Bukan karena aku kesepian. Tapi karena kamu terasa seperti tempat yang nyaman untuk pikiran-pikiranku pulang.</p>`,
+  `<p>21/05/26</p>
+   <p>Hari di mana kita pertama kali bertemu. Mungkin bagi sebagian orang, itu hanyalah hari biasa. Tidak ada yang terlihat istimewa atau berbeda dari hari-hari lainnya.</p>
+   <p>Namun bagiku, hari itu adalah awal dari banyak hal yang tak pernah kuduga sebelumnya. Awal dari rasa nyaman, rasa kagum, dan perasaan yang pada akhirnya membawaku untuk membuat sebuah website ini.</p>
+   <p>Sebuah website yang mungkin suatu hari nanti akan menjadi kenangan. Tempat untuk menyimpan cerita kecil tentang bagaimana semuanya bermula, tepat pada hari ketika aku pertama kali mengenalmu.</p>`,
 
   // Halaman 2
-  `<p>Kamu mungkin tidak sadar, tapi ada momen-momen kecil yang diam-diam aku simpan.</p>
-   <p>Cara kamu tertawa. Cara kamu cerita tentang hal-hal yang kamu suka. Cara kamu hadir — bahkan ketika kamu tidak berkata apa-apa pun.</p>
-   <p>Hal-hal kecil itu, tanpa kamu minta, sudah jadi bagian dari hari-hariku.</p>`,
+  `<p>Mungkin kamu tidak sadar, kalau ada banyak momen-momen kecil yang sengaja diam-diam kusimpan.</p>
+   <p>Mulai dari cara kamu tertawa, cara kamu bercerita, cara kamu bahagia saat sesuatu berjalan sesuai yang kamu harapkan, sampai cara kamu marah ketika ada hal yang membuatmu kesal. Cara kamu selalu berusaha mendukungku, cara kamu memberitahuku banyak hal yang sebelumnya tidak pernah aku tau, bahkan cara kamu mengeluh tentang hari-harimu yang melelahkan.</p>
+   <p>Dan yang paling aku suka, cara kamu hadir.</p>
+   <p>Entah kenapa, hal-hal yang terlihat sederhana itu justru menjadi hal yang paling sering kuingat. Tanpa kamu minta, tanpa kamu sadari, semuanya perlahan sudah menjadi bagian dari hari-hariku.</p>
+   <p>Mungkin karena dari hal-hal kecil itulah, perlahan aku mulai menemukan yang namanya cinta.</p>`,
 
   // Halaman 3
-  `<p>Aku pernah takut bilang ini.</p>
-   <p>Takut salah. Takut berlebihan. Takut kamu lihat aku beda setelahnya.</p>
-   <p>Tapi ada satu hal yang lebih aku takutkan: membiarkan waktu terus berjalan dan tidak pernah berani jujur.</p>
-   <p>Jadi... ini aku. Dengan perasaan yang sudah terlalu lama aku simpan sendiri.</p>`,
+  `<p>Selama mengenalmu, ada banyak hal yang berubah tanpa kusadari.</p>
+   <p>Jujur saja, sebelum mengenalmu, aku pernah berada di titik di mana aku tidak terlalu percaya lagi pada yang namanya cinta. Aku berpikir bahwa mungkin beberapa hal memang lebih baik dibiarkan berjalan apa adanya tanpa perlu melibatkan perasaan yang terlalu dalam.</p>
+   <p>Bahkan saat itu aku sempat berjanji pada diriku sendiri untuk tidak lagi berlebihan soal cinta. Tidak lagi menaruh harapan terlalu tinggi, tidak lagi membiarkan perasaan mengambil terlalu banyak ruang dalam hidupku. Aku hanya ingin menjalani hari-hariku dengan tenang, tanpa perlu memikirkan hal-hal yang bisa membuatku kecewa lagi.</p>
+   <p>Karena itu, aku tidak pernah benar-benar berniat untuk membuka hati lagi. Aku menikmati hariku seperti biasa, tanpa berharap akan ada seseorang yang mampu mengubah cara pandangku tentang perasaan.</p>`,
 
   // Halaman 4
-  `<p>Aku tidak bisa berjanji aku sempurna.</p>
-   <p>Tapi aku bisa berjanji untuk hadir. Untuk dengerin. Untuk selalu usahakan senyumanmu ada di pagi-pagi kita.</p>
-   <p>Kamu layak dapat seseorang yang sadar betapa berartinya kamu. Dan aku mau jadi orang itu — kalau kamu mau.</p>`,
+  `<p>Namun, semua itu perlahan berubah sejak aku mengenalmu.</p>
+   <p>Tanpa kusadari, aku mulai menantikan pesan darimu. Aku mulai memperhatikan hal-hal kecil tentangmu. Bahkan percakapan sederhana yang mungkin terlihat biasa saja, sering kali berhasil membuat hariku terasa lebih baik.</p>
+   <p>Perasaan itu tumbuh perlahan. Tidak datang secara tiba-tiba, tidak pula karena paksaan. Ia hadir sedikit demi sedikit, hingga akhirnya aku menyadari bahwa kamu telah menjadi seseorang yang sangat berarti dalam hari-hariku.</p>
+   <p>Dan untuk pertama kalinya setelah sekian lama, aku kembali percaya bahwa mungkin cinta itu masih ada. Mungkin, selama ini aku hanya belum bertemu dengan orang yang tepat untuk membuatku mempercayainya lagi.</p>`,
 
   // Halaman 5
-  `<p>Jadi inilah aku, membuka surat yang sudah lama ingin kutulis.</p>
-   <p>Kamu tidak harus menjawab sekarang. Kamu tidak harus merasa terburu.</p>
-   <p>Tapi kalau hatimu berkata iya — aku di sini. Sudah lama di sini.</p>
-   <p>Dengan sepenuh hati,<br/><em>— seseorang yang peduli padamu ♡</em></p>`,
+  `<p>Sampai di bagian ini, mungkin kamu sudah tahu alasan kenapa aku membuat semua ini.</p>
+   <p>Aku tidak membuat website ini hanya untuk menceritakan apa yang kurasakan. Aku membuatnya karena ada sesuatu yang sudah lama ingin kusampaikan kepadamu, sesuatu yang selama ini kusimpan dalam hati.</p>
+   <p>Aku menyayangimu.</p>
+   <p>Dan semakin hari, perasaan itu tidak pernah berkurang. Justru semakin membuatku yakin bahwa aku ingin mengenalmu lebih jauh, bukan hanya sebagai seseorang yang hadir dalam hari-hariku, tetapi sebagai seseorang yang ingin berjalan bersamaku.</p>
+   <p>Aku tidak akan berjanji bahwa aku adalah orang yang sempurna. Aku punya banyak kekurangan, banyak hal yang masih perlu aku pelajari, dan mungkin akan ada saat-saat di mana aku melakukan kesalahan.</p>
+   <p>Tapi jika ada satu hal yang bisa kujanjikan, itu adalah aku akan selalu berusaha semaksimal mungkin.</p>
+   <p>Berusaha untuk membuatmu merasa dihargai. Berusaha untuk mendengarkan setiap ceritamu. Berusaha untuk ada ketika kamu membutuhkan seseorang. Dan berusaha menjadi alasan di balik senyumanmu, meskipun hanya sedikit.</p>
+   <p>Aku tidak bisa menjanjikan hubungan yang sempurna.</p>
+   <p>Namun aku bisa menjanjikan kesungguhan, kejujuran, dan usaha untuk terus memilihmu setiap hari,<br/><em>— seseorang yang peduli padamu ♡</em></p>`,
 ];
 
 let currentPage = 0;
